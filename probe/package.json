@@ -1,0 +1,10 @@
+{
+  "name": "@mars.liu/dsh-canary-probe",
+  "version": "0.1.0",
+  "description": "dsh-canary in-boot probe: presence-level check that a candidate plugin's primary service resolves in ctx. Never blocks.",
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js"
+  }
+}

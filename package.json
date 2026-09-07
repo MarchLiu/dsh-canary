@@ -1,0 +1,50 @@
+{
+  "name": "@mars.liu/dsh-canary",
+  "version": "0.1.0",
+  "description": "dsh market install-safety canary: REALLY boot a profile composition (real profile bundles + a candidate plugin) to catch 'verifies statically, dies on restart'. A zero-docker, host-side boot probe with a bounded functional probe.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marsliu/dsh-canary.git"
+  },
+  "bin": {
+    "dsh-canary": "dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./probe": {
+      "import": "./probe/lib/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "probe",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node scripts/postbuild.mjs",
+    "clean": "rm -rf dist",
+    "test": "node --test test/*.test.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin-safety",
+    "boot-canary",
+    "install-validation"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}
