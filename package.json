@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/marsliu/dsh-canary.git"
+    "url": "git+https://github.com/MarchLiu/dsh-canary.git"
   },
   "bin": {
     "dsh-canary": "dist/cli.js"
