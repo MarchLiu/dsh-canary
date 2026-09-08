@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="canary-logo.svg" width="120" alt="dsh-canary logo" />
+</p>
+
 # dsh-canary
 
 **Boot-verify a dsh plugin against the real profile, for real.** dsh-canary
