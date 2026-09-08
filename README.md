@@ -32,6 +32,20 @@ missing half: run the real dsh CLI on a composition that is your profile's
 bundle stack **plus the candidate**, under a hard timeout, and report whether
 the boot survives.
 
+### Case study: the silent-failure blind spot
+
+A real-world troubleshooting session
+([docs/case-studies/2026-09-08-dsh-context-troubleshooting.md](docs/case-studies/2026-09-08-dsh-context-troubleshooting.md),
+issue [dsh-market/dsh-market#554](https://github.com/dsh-market/dsh-market/issues/554))
+isolated a case where `dshmarket@1.45.0` boot-ok'd cleanly while silently
+breaking the client-plugin registration chain for every plugin after it
+(`dsh-context`'s `/context` command never registered — zero errors anywhere).
+Six rounds of `--patch` bisect in an isolated `DSH_HOME` manual-canary found it.
+That case exposes a gap in the current L0 verdicts: **boot-ok + own-probe-pass
+says nothing about collateral damage to co-installed client plugins** — a
+"probe-collateral" / registration-level probe dimension is tracked in §5 of
+the case study.
+
 ---
 
 ## Install
